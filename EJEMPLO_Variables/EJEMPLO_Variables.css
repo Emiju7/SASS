@@ -1,0 +1,53 @@
+/*
+TIPOS DE VARIABLES EN SASS
+    NUMBERS: Numeros que pueden o no contener la unidad (23px, 2rem)
+    STRINGS: Cadenas que pueden o no definirse con comillas ("hola", 'hola', hola)
+    COLORS: Colores que pueden ser definidos con su formato hexadecimal o con su nombre (#000, black)
+    BOOLEAN: Datos de tipo booleano
+    NULL
+    LIST OF VALUES: Lista de valores que pueden ser separados mediante comas o espacios en blanco y que pueden
+                    estar encapsulados en corchetes o no ((grey, "arial, 23px, "left", true, null);)
+    MAPS: Lista de valores que asocia un nombre a cada dato((background: red, "foreground": pink);)
+*/
+.btn-error {
+  background-color: #f00;
+}
+
+.container {
+  background-image: url("img/fondos/.....");
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  color: #f00;
+}
+a:visited {
+  color: #00f;
+}
+a:active {
+  color: #0f0;
+}
+
+header {
+  font-family: sans-serif;
+  background-color: darkgrey;
+}
+
+main {
+  font-family: "raleway";
+  background-color: lightgreen;
+}
+
+footer {
+  font-family: sans-serif;
+  background-color: blue;
+}
+
+header, main, footer {
+  border: 2px solid black;
+}
+
+/*# sourceMappingURL=EJEMPLO_Variables.css.map */

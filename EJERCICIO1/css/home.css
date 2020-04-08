@@ -1,0 +1,84 @@
+@charset "UTF-8";
+/*RESET DE VALORES*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*Elementos con display flex*/
+header,
+nav,
+main,
+.Imagenes {
+  display: flex;
+}
+
+/*Centrado de los hijos de estos elementos*/
+header,
+main {
+  justify-content: center;
+}
+
+/*Elementos hijo de los generales con tamaño de 80% y alineacion vertical al centro*/
+nav,
+.Imagenes {
+  flex-flow: row wrap;
+  align-items: center;
+  width: 80%;
+}
+
+header nav {
+  background-color: pink;
+  height: 50px;
+  padding-left: 30px;
+}
+header nav .elementMenu {
+  list-style: none;
+  margin: 0px 25px;
+}
+header nav .elementMenu a {
+  text-decoration: none;
+  color: black;
+}
+header nav .elementMenu a:hover {
+  font-size: 1.2em;
+  color: green;
+}
+header nav .elementMenu a:visited {
+  color: blue;
+}
+header nav .elementMenu a:active {
+  color: purple;
+}
+header nav #Inicio a {
+  color: white;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+main .Imagenes {
+  margin-top: 25px;
+}
+main .Imagenes .Imagen {
+  display: inline-flex;
+  flex-flow: column wrap;
+  align-items: center;
+  padding: 5px 20px;
+  margin: 0px 10px;
+  border: 2px solid black;
+  border-radius: 15px;
+}
+main .Imagenes .Imagen img {
+  width: 300px;
+  height: 150px;
+  border-radius: 20px;
+}
+main .Imagenes .Imagen figcaption {
+  font-style: italic;
+}
+
+/*# sourceMappingURL=home.css.map */
