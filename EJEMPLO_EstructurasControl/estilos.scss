@@ -1,0 +1,84 @@
+@use 'sass:list';
+
+$light-theme: false;
+$light-web-colors: (
+    white,
+    darkslategray
+);
+$dark-theme: false;
+$dark-web-colors: (
+    black,
+    lightgrey
+);
+
+//ESTRUCTURA IF//
+header{
+    @if $light-theme {
+        background-color: list.nth($light-web-colors, 1);
+        color: list.nth($light-web-colors, 2);
+    }@else if $dark-theme{
+        background-color: list.nth($dark-web-colors, 1);
+        color: list.nth($dark-web-colors, 2);
+    }@else{
+        background-color: lightgreen;
+        color: black;
+    }
+}
+
+//ESTRUCTURA WHILE//
+$table-colors:(
+    #f00,
+    #0f0,
+    #00f,
+    #ccc
+);
+
+$num: 1;
+@while ($num<5) {
+    .while td:nth-child(#{$num}){
+        color: black;
+        background-color: list.nth($table-colors, $num);
+    }
+    $num: $num +1;
+}
+
+//ESTRUCTURA FOR//
+$table-colors:(
+    rgb(65, 197, 13),
+    rgba(247, 255, 136, 0.856),
+    rgba(7, 126, 206, 0.931),
+    rgb(196, 68, 255)
+);
+
+@for $i from 1 to 5 {
+    .for td:nth-child(#{$i}){
+        color: black;
+        background-color: list.nth($table-colors, $i);
+    }
+}
+
+//ESTRUCTURA EACH//
+$users-name: (
+    pepe,
+    lola,
+    manuel
+);
+
+@each $user in $users-name {
+    .user-#{$user}{
+        background-image: url(img/#{$user}.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+//FUNCIONES//
+//Permite ajustar el tamaño en funcion del numero de columnas a ocupar y el tamaño total
+@function anchura-col($cols, $total){
+    @return percentage($cols/$total);
+}
+
+.function{
+    background-color: goldenrod;
+    width: anchura-col(5, 10);
+}

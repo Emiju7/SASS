@@ -1,0 +1,139 @@
+//SECTION IMPLEMENTACION DE USOS//
+@use 'sass:list';
+@use 'sass:map';
+//!SECTION //
+
+//SECTION DECLARACION DE VARIABLES//
+
+//Colores utilizados para la tabla//
+$column-colors: (even: rgb(134, 101, 195),
+    odd: rgb(208, 238, 153));
+//Posibles tipos de botones
+$button-status:("warning",
+    "error",
+    "accepted",
+    "normal"
+);
+//Colores en funcion del status del boton//
+$button-status-color:(list.nth($button-status, 1): orange,
+    list.nth($button-status, 2): red,
+    list.nth($button-status, 3): green,
+    list.nth($button-status, 4): blue);
+$block-father-size: 8;
+$block-space:(2,
+    1,
+    3);
+
+//!SECTION //
+
+//SECTION DECLARACION DE FUNCIONES//
+//Devuelve el color del boton en funcion de su tipo dado el indice del boton hijo
+@function buttonColor($buttonsChild) {
+
+    //Devuelve el color del mapa #{button-status-color}, buscando la clave en la lista #{$button-status} dada la posicion del hijo boton #{buttonsChild}
+    @return map.get($button-status-color, list.nth($button-status, $buttonsChild));
+}
+
+//Devuelve el color de la columna distinguiendo entre par e impar, dado el indice de la columna
+@function column-even($column-index) {
+    @if(($column-index%2)==0) {
+        //la columna es par
+        @return map.get($column-colors, "even");
+    }
+
+    @else {
+        //la columna es impar
+        @return map.get($column-colors, "odd");
+    }
+}
+
+//Devuelve el valor de #{column-space} en porcentaje sobre #{block-father-size}
+@function relativeColumnWidth($column-space) {
+    @return (percentage($column-space/$block-father-size));
+}
+
+//Calcula el valor restante para completar las columnas
+@function calcRestColumnWidth() {
+    $rest: 0;
+
+    @each $value in $block-space {
+        $rest: $rest+$value;
+    }
+
+    @return ($block-father-size - $rest);
+}
+
+//!SECTION //
+
+//SECTION CODIGO CSS//
+/*RESET DE VALORES*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+//Asigna todos los colores a los tipos de botones
+@for $i from 1 to (list.length($button-status)+1) {
+    .buttons>button:nth-child(#{$i}) {
+        //Asignamos el valor devuelto de la funcion buttonColor(), pasandole la posicion de cada uno de los botones hijos
+        background-color: buttonColor($i);
+        border-radius: 10px;
+        height: 40px;
+
+        &:hover {
+            box-shadow: 3px 3px 3px #888;
+            transform: scale(1.1);
+        }
+    }
+}
+
+//Asigna el color a la columna de la tabla en funcion de si es par o no
+@for $i from 1 to 11 {
+    td:nth-child(#{$i}) {
+        //Calculamos si es par, y asignamos el valor devuelto por la funcion column-even()
+        background-color: column-even($i);
+    }
+}
+
+.buttons,
+table {
+    margin: 30px 0px;
+    padding-left: 25px;
+}
+
+td {
+    height: 35px;
+}
+
+/*
+Antes que cualquier calculo
+asignamos a var el tamaño que falta para completar las columnas 
+Luego, lo añadimos a la lista #{$block-space}
+*/
+$var: calcRestColumnWidth();
+$block-space: list.append($block-space, $var);
+
+//Establece el tamaño a todoas las columnas
+@for $i from 1 to (list.length($block-space)+1) {
+    .bloque:nth-child(#{$i}) {
+        //Establece el tamaño en funcion de #{$block-father-size} y los valores de #{$block-space}
+        width: relativeColumnWidth(list.nth($block-space, $i));
+    }
+
+}
+
+.columns_8 {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.bloque {
+    height: 200px;
+    border: 2px solid black;
+}
+
+//!SECTION //

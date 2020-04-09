@@ -1,0 +1,69 @@
+header {
+  background-color: lightgreen;
+  color: black;
+}
+
+.while td:nth-child(1) {
+  color: black;
+  background-color: #f00;
+}
+
+.while td:nth-child(2) {
+  color: black;
+  background-color: #0f0;
+}
+
+.while td:nth-child(3) {
+  color: black;
+  background-color: #00f;
+}
+
+.while td:nth-child(4) {
+  color: black;
+  background-color: #ccc;
+}
+
+.for td:nth-child(1) {
+  color: black;
+  background-color: #41c50d;
+}
+
+.for td:nth-child(2) {
+  color: black;
+  background-color: rgba(247, 255, 136, 0.856);
+}
+
+.for td:nth-child(3) {
+  color: black;
+  background-color: rgba(7, 126, 206, 0.931);
+}
+
+.for td:nth-child(4) {
+  color: black;
+  background-color: #c444ff;
+}
+
+.user-pepe {
+  background-image: url(img/pepe.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.user-lola {
+  background-image: url(img/lola.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.user-manuel {
+  background-image: url(img/manuel.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.function {
+  background-color: goldenrod;
+  width: 50%;
+}
+
+/*# sourceMappingURL=estilos.css.map */
