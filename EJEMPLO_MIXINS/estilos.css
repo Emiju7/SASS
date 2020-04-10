@@ -1,0 +1,39 @@
+.header {
+  margin: 0px auto;
+  background-color: black;
+  color: white;
+}
+
+a a {
+  background-color: yellow;
+  font-style: italic;
+  text-decoration: none;
+}
+
+.main-menu {
+  margin: 0px auto;
+  background-color: #666;
+  color: white;
+  height: 3rem;
+}
+
+.slide-tile {
+  -webkit-transform: rotate(69deg);
+  -ms-transform: rotate(69deg);
+  transform: rotate(69deg);
+  color: #f00;
+}
+
+.logo-cudrado {
+  background-image: url("img/miLogoGuapo");
+  background-position: center;
+  border-radius: 0px;
+}
+
+.logo-redondeado {
+  background-image: url("img/miLogoGuapo");
+  background-position: center;
+  border-radius: 10px;
+}
+
+/*# sourceMappingURL=estilos.css.map */
