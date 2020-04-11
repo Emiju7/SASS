@@ -1,0 +1,17 @@
+//Asigna el color a la columna de la tabla en funcion de si es par o no
+@for $i from 1 to 11 {
+    td:nth-child(#{$i}) {
+        //Calculamos si es par, y asignamos el valor devuelto por la funcion column-even()
+        background-color: column-even($i);
+    }
+}
+
+table {
+    margin: 30px 0px;
+    padding-left: 25px;
+    width: 60%;
+}
+
+td {
+    height: 35px;
+}

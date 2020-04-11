@@ -1,0 +1,10 @@
+@use 'sass:list';
+@use 'sass:map';
+
+@import "base/variables";
+@import "base/mixins";
+@import "base/funciones";
+@import "components/header";
+@import "components/mainButtons";
+@import "components/mainGaleria";
+@import "components/mainTabla";

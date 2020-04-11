@@ -1,0 +1,45 @@
+/*Elementos con display flex*/
+
+main,
+.Imagenes {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+/*Centrado de los hijos de estos elementos*/
+main {
+    justify-content: center;
+}
+
+/*Elementos hijo de los generales con tamaño de 80% y alineacion vertical al centro*/
+.Imagenes {
+    align-items: center;
+    width: $gallery-width;
+    height: $gallery-height;
+}
+
+//Desglose de los elementos individuales del MAIN//
+main {
+
+    .Imagenes {
+        margin-top: 25px;
+
+        .Imagen {
+            display: inline-flex;
+            flex-flow: column wrap;
+            align-items: center;
+            width: calc(100%/4);
+
+            img {
+                @include gallery-img-size;
+            }
+
+            figcaption {
+                font-style: italic;
+            }
+
+            @include rotate-gallery-img-size(360deg);
+
+        }
+    }
+}

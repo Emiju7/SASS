@@ -1,0 +1,72 @@
+////@access public
+////@author @emiju7
+
+///Mapa con los posibles colores de fondo de la tabla
+///@group Colors
+$column-colors: (even: rgb(134, 101, 195),
+    odd: rgb(208, 238, 153));
+
+///Posibles tipos de botones
+///@group Buttons
+$button-status:("warning",
+    "error",
+    "accepted",
+    "normal"
+);
+
+///Colores en funcion del tipo del boton
+///@group Colors
+$button-status-color: (list.nth($button-status, 1): orange,
+    list.nth($button-status, 2): red,
+    list.nth($button-status, 3): green,
+    list.nth($button-status, 4): blue);
+
+///Ancho de las imagenes de la galeria
+///@group Dimensions
+$gallery-img-width: 90%;
+
+///Altura de las imagenes de la galeria
+///@group Dimensions
+$gallery-img-height: 150px;
+
+///Radio del borde de las imagenes de la galeria
+///@group Dimensions
+$gallery-img-radius: 20px;
+
+///Altura de la barra de menu
+///@group Dimensions
+$nav-height:50px;
+
+///Anchura de la barra de menu
+///@group Dimensions
+$nav-width:80%;
+
+///Anchura de la galeria
+///@group Dimensions
+$gallery-width:$nav-width;
+
+///Altura de la galeria
+///@group Dimensions
+$gallery-height:200px;
+
+///Margenes laterales del menu y la galeria
+///@group Dimensions
+$latterals-nav-gallery-margins:((100%-$nav-width)/2);
+
+///Colores principales de la pagina
+///@group Colors
+$web-colors: (white,
+    palevioletred,
+    black);
+
+///Colores para los diferentes stados de los link de la pagina
+///@group Colors
+$link-colors:(
+    link: gold,
+    visited: blue,
+    hover: green,
+    active: purple);
+
+///Tamaño de la letra resaltada
+///@group Font
+$text-resaltado: 1.3em;

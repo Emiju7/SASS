@@ -1,0 +1,54 @@
+////@access public
+////@author @emiju7
+
+///Establece las dimensiones de las imagenes de la galeria
+///@group Dimensions
+@mixin gallery-img-size {
+    width: $gallery-img-width;
+    height: $gallery-img-height;
+    border: 2px solid black;
+    border-radius: $gallery-img-radius;
+}
+
+///Rota la imagen de la galeria la cantidad de grados pasada
+///@group Translations
+///@parameter {deg} $grados[0deg] - Grados que se desea que rote la imagen
+@mixin rotate-gallery-img-size($grados:0deg) {
+    transform: rotate(0deg);
+    transition: transform 2s linear;
+
+    &:hover {
+        transform: rotate(#{$grados});
+    }
+}
+
+///Establece los colores de los enlaces en funcion de los colores dados
+///Asimismo, elimina la decoracion de los enlace, y aumenta el tamaño de los elementos hover
+///@group Colors
+///@parameter {color} $link[blue] - Color base
+///@parameter {color} $visited[rgb(247, 114, 114)] - Color para cuando se ha visitado el enlace
+///@parameter {color} $hover[green] - Color para cuando se situal el raton sobre el enlace
+///@parameter {color} $active[purple] - Color mientras se pulsa el enlace
+@mixin link-action-styles($link:blue, $visited:rgb(247, 114, 114), $hover:green, $active:purple) {
+    a {
+        text-decoration: none;
+        color: black;
+
+        &:link {
+            color: map-get($link-colors, link);
+        }
+
+        &:visited {
+            color: map-get($link-colors, visited);
+        }
+
+        &:hover {
+            font-size: $text-resaltado - 0.1em;
+            color: map-get($link-colors, hover);
+        }
+
+        &:active {
+            color: map-get($link-colors, active);
+        }
+    }
+}

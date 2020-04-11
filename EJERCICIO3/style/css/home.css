@@ -1,0 +1,209 @@
+@charset "UTF-8";
+/*RESET DE VALORES*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*Elementos con display flex*/
+header,
+nav {
+  display: flex;
+}
+
+/*Centrado de los hijos de estos elementos*/
+header {
+  justify-content: center;
+}
+
+/*Elementos hijo de los generales con tamaño de 80% y alineacion vertical al centro*/
+nav {
+  flex-flow: row wrap;
+  align-items: center;
+  width: 80%;
+}
+
+header nav {
+  background-color: palevioletred;
+  width: 80%;
+  height: 50px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+header nav .elementMenu {
+  list-style: none;
+  margin: 0px 25px;
+}
+header nav .elementMenu a {
+  text-decoration: none;
+  color: black;
+}
+header nav .elementMenu a:link {
+  color: gold;
+}
+header nav .elementMenu a:visited {
+  color: blue;
+}
+header nav .elementMenu a:hover {
+  font-size: 1.2em;
+  color: green;
+}
+header nav .elementMenu a:active {
+  color: purple;
+}
+header nav #Inicio a {
+  color: white;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.buttons > button:nth-child(1) {
+  background-color: orange;
+  border-radius: 10px;
+  height: 40px;
+}
+.buttons > button:nth-child(1):hover {
+  box-shadow: 3px 3px 3px #888;
+  transform: scale(1.1);
+}
+
+.buttons > button:nth-child(2) {
+  background-color: red;
+  border-radius: 10px;
+  height: 40px;
+}
+.buttons > button:nth-child(2):hover {
+  box-shadow: 3px 3px 3px #888;
+  transform: scale(1.1);
+}
+
+.buttons > button:nth-child(3) {
+  background-color: green;
+  border-radius: 10px;
+  height: 40px;
+}
+.buttons > button:nth-child(3):hover {
+  box-shadow: 3px 3px 3px #888;
+  transform: scale(1.1);
+}
+
+.buttons > button:nth-child(4) {
+  background-color: blue;
+  border-radius: 10px;
+  height: 40px;
+}
+.buttons > button:nth-child(4):hover {
+  box-shadow: 3px 3px 3px #888;
+  transform: scale(1.1);
+}
+
+.buttons {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  width: 50%;
+}
+
+.buttons > button {
+  width: calc(80%/4);
+  margin: 5px 15px;
+}
+
+/*Elementos con display flex*/
+main,
+.Imagenes {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+/*Centrado de los hijos de estos elementos*/
+main {
+  justify-content: center;
+}
+
+/*Elementos hijo de los generales con tamaño de 80% y alineacion vertical al centro*/
+.Imagenes {
+  align-items: center;
+  width: 80%;
+  height: 200px;
+}
+
+main .Imagenes {
+  margin-top: 25px;
+}
+main .Imagenes .Imagen {
+  display: inline-flex;
+  flex-flow: column wrap;
+  align-items: center;
+  width: calc(100%/4);
+  transform: rotate(0deg);
+  transition: transform 2s linear;
+}
+main .Imagenes .Imagen img {
+  width: 90%;
+  height: 150px;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+main .Imagenes .Imagen figcaption {
+  font-style: italic;
+}
+main .Imagenes .Imagen:hover {
+  transform: rotate(360deg);
+}
+
+td:nth-child(1) {
+  background-color: #d0ee99;
+}
+
+td:nth-child(2) {
+  background-color: #8665c3;
+}
+
+td:nth-child(3) {
+  background-color: #d0ee99;
+}
+
+td:nth-child(4) {
+  background-color: #8665c3;
+}
+
+td:nth-child(5) {
+  background-color: #d0ee99;
+}
+
+td:nth-child(6) {
+  background-color: #8665c3;
+}
+
+td:nth-child(7) {
+  background-color: #d0ee99;
+}
+
+td:nth-child(8) {
+  background-color: #8665c3;
+}
+
+td:nth-child(9) {
+  background-color: #d0ee99;
+}
+
+td:nth-child(10) {
+  background-color: #8665c3;
+}
+
+table {
+  margin: 30px 0px;
+  padding-left: 25px;
+  width: 60%;
+}
+
+td {
+  height: 35px;
+}
+
+/*# sourceMappingURL=home.css.map */

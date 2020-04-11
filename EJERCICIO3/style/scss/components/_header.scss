@@ -1,0 +1,54 @@
+
+/*RESET DE VALORES*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*Elementos con display flex*/
+header,
+nav{
+    display: flex;
+}
+
+/*Centrado de los hijos de estos elementos*/
+header{
+    justify-content: center;
+}
+
+/*Elementos hijo de los generales con tamaño de 80% y alineacion vertical al centro*/
+nav {
+    flex-flow: row wrap;
+    align-items: center;
+    width: $nav-width;
+}
+
+//Desglose de los elementos individuales del HEADER//
+header {
+    nav {
+        background-color: list.nth($web-colors, 2);
+        width: $nav-width;
+        height: $nav-height;
+        margin-left: $latterals-nav-gallery-margins;
+        margin-right: $latterals-nav-gallery-margins;
+
+        .elementMenu {
+            list-style: none;
+            margin: 0px 25px;
+
+            @include link-action-styles(blue, red, green, violet);
+        }
+
+        #Inicio {
+            a {
+                color: list.nth($web-colors, 1);
+                font-weight: bold;
+                font-size: $text-resaltado;
+            }
+        }
+    }
+}

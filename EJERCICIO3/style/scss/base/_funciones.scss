@@ -1,0 +1,28 @@
+////@access public
+////@author @emiju7
+
+///Devuelve el color del boton en funcion de su tipo dado el indice del boton hijo
+///@group Colors
+///@parameter {number} $buttonsChild - Indice del boton hijo a devolver el color
+///@return {color} - Color correspondiente al boton con el indice dado
+@function buttonColor($buttonsChild) {
+
+    //Devuelve el color del mapa #{button-status-color}, buscando la clave en la lista #{$button-status} dada la posicion del hijo boton #{buttonsChild}
+    @return map.get($button-status-color, list.nth($button-status, $buttonsChild));
+}
+
+///Devuelve el color de la columna distinguiendo entre par e impar, dado el indice de la columna
+///@group Colors
+///@parameter {number} $column-index - Indice de la columna sobre la que comprobar si es par o impar
+///@return {color} - Color adecuando en funcion de la paridad de $column-index
+@function column-even($column-index) {
+    @if(($column-index%2)==0) {
+        //la columna es par
+        @return map.get($column-colors, "even");
+    }
+
+    @else {
+        //la columna es impar
+        @return map.get($column-colors, "odd");
+    }
+}

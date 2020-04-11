@@ -1,0 +1,27 @@
+
+//Asigna todos los colores a los tipos de botones
+@for $i from 1 to (list.length($button-status)+1) {
+    .buttons>button:nth-child(#{$i}) {
+        //Asignamos el valor devuelto de la funcion buttonColor(), pasandole la posicion de cada uno de los botones hijos
+        background-color: buttonColor($i);
+        border-radius: 10px;
+        height: 40px;
+
+        &:hover {
+            box-shadow: 3px 3px 3px #888;
+            transform: scale(1.1);
+        }
+    }
+}
+
+.buttons{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    width: 50%;
+}
+
+.buttons>button{
+    width: calc(80%/4);
+    margin: 5px 15px;
+}
